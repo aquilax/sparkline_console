@@ -12,5 +12,5 @@ A simple usage example:
 
     main() {
       var sparkLine = new SparkLine();
-      print(sparkLine.generate([1, 2, 3, 4, 5, 6, 7, 8]));
+      print(sparkLine.generate([1, 2, 3, 4, 5, 6, 7, 8])); // ▁▂▃▄▅▆▇█
     }
