@@ -12,5 +12,10 @@ void main() {
       var points = [1, 2, 3, 4, 5, 6, 7, 8];
       expect(new SparkLine('0123456789').generate(points), equals('01245789'));
     });
+
+    test('empty list generates empty response', () {
+      var points = [];
+      expect(new SparkLine().generate(points), equals(''));
+    });
   });
 }
