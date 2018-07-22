@@ -4,6 +4,8 @@
 
 A library for generating command line sparklines.
 
+In the package repository: [here](https://pub.dartlang.org/packages/sparkline_console)
+
 Adapted from [this](https://github.com/joliv/spark) Go library.
 
 ## Usage
