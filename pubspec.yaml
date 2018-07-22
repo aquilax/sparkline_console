@@ -1,5 +1,5 @@
 name: sparkline_console
-description: Sparkline for command line applications
+description: Simple sparkline for command line applications. Allows for custom level set.
 version: 0.0.1
 homepage: https://github.com/aquilax/sparkline_console
 author: aquilax <aquilax@gmail.com>
