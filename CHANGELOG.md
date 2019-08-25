@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Fixes linter hints
+
 ## 1.0.2
 
 - Cleans up the public interface, adds more documentation
