@@ -1,41 +1,39 @@
 /// Generates new sparkline.
 class SparkLine {
-  String _steps;
+  final String _steps;
   int _stepCount;
 
   /// Creates new object and optionally sets the spark levels
   SparkLine([this._steps = '▁▂▃▄▅▆▇█']) {
-    this._stepCount = this._steps.length;
+    _stepCount = _steps.length;
   }
 
   /// Genereates sparkline for the list of numbers
   String generate(List<num> nums) {
     if (nums.isEmpty) {
-      return "";
+      return '';
     }
-    var indices = _normalize(nums);
-    var buffer = StringBuffer();
-    for (var index in indices) {
+    final indices = _normalize(nums);
+    final buffer = StringBuffer();
+    for (final index in indices) {
       buffer.write(_steps[index]);
     }
     return buffer.toString();
   }
 
   List<int> _normalize(List<num> nums) {
-    List<int> indices = [];
-    num min =
+    final min =
         nums.reduce((value, element) => value > element ? element : value);
-    for (var i = 0; i < nums.length; i++) {
-      nums[i] -= min;
-    }
-    num max =
-        nums.reduce((value, element) => value < element ? element : value);
+    final numsCapped = nums.map((numb) => numb -= min).toList();
+
+    var max =
+        numsCapped.reduce((value, element) => value < element ? element : value);
     max = max == 0 ? 1 : max;
-    for (var n in nums) {
+
+    return numsCapped.map((n) {
       n /= max;
       n *= _stepCount;
-      indices.add(n == _stepCount ? _stepCount - 1 : n.floor());
-    }
-    return indices;
+      return n == _stepCount ? _stepCount - 1 : n.floor();
+    }).toList();
   }
 }

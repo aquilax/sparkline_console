@@ -1,3 +1,8 @@
+## 1.0.4
+
+- More functional implementation
+- Added benchmark
+
 ## 1.0.3
 
 - Fixes linter hints
