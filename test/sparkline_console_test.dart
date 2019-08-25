@@ -17,5 +17,11 @@ void main() {
       List<num> points = [];
       expect(new SparkLine().generate(points), equals(''));
     });
+
+    test('works with negative numbers', () {
+      List<num> points = [-1, 2, -3, 4, -5, 6, -7, 8];
+      expect(new SparkLine('0123456789').generate(points), equals('46271809'));
+    });
+
   });
 }

@@ -13,29 +13,25 @@ class SparkLine {
     if (nums.isEmpty) {
       return "";
     }
-    var indices = _normalize(nums);
-    var buffer = StringBuffer();
-    for (var index in indices) {
-      buffer.write(_steps[index]);
-    }
+    final indices = _normalize(nums);
+    final buffer = StringBuffer();
+    indices.forEach((index) => buffer.write(_steps[index]));
     return buffer.toString();
   }
 
   List<int> _normalize(List<num> nums) {
-    List<int> indices = [];
-    num min =
+    final min =
         nums.reduce((value, element) => value > element ? element : value);
-    for (var i = 0; i < nums.length; i++) {
-      nums[i] -= min;
-    }
+    final numsCapped = nums.map((num) => num -= min).toList();
+
     num max =
-        nums.reduce((value, element) => value < element ? element : value);
+        numsCapped.reduce((value, element) => value < element ? element : value);
     max = max == 0 ? 1 : max;
-    for (var n in nums) {
+
+    return numsCapped.map((n) {
       n /= max;
       n *= _stepCount;
-      indices.add(n == _stepCount ? _stepCount - 1 : n.floor());
-    }
-    return indices;
+      return n == _stepCount ? _stepCount - 1 : n.floor();
+    }).toList();
   }
 }
