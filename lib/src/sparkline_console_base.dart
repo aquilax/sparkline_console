@@ -4,7 +4,7 @@ class SparkLine {
   int _stepCount;
 
   /// Creates new object and optionally sets the spark levels
-  SparkLine([String this._steps = '▁▂▃▄▅▆▇█']) {
+  SparkLine([this._steps = '▁▂▃▄▅▆▇█']) {
     this._stepCount = this._steps.length;
   }
 
@@ -14,7 +14,7 @@ class SparkLine {
       return "";
     }
     var indices = _normalize(nums);
-    var buffer = new StringBuffer();
+    var buffer = StringBuffer();
     for (var index in indices) {
       buffer.write(_steps[index]);
     }
