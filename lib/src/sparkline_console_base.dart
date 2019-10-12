@@ -26,8 +26,8 @@ class SparkLine {
         nums.reduce((value, element) => value > element ? element : value);
     final numsCapped = nums.map((numb) => numb -= min).toList();
 
-    var max =
-        numsCapped.reduce((value, element) => value < element ? element : value);
+    var max = numsCapped
+        .reduce((value, element) => value < element ? element : value);
     max = max == 0 ? 1 : max;
 
     return numsCapped.map((n) {
