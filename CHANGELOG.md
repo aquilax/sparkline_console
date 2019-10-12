@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Ran dartfmt
+
 ## 1.0.4
 
 - More functional implementation
