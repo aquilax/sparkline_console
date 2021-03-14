@@ -1,7 +1,7 @@
 /// Generates new sparkline.
 class SparkLine {
   final String _steps;
-  int _stepCount;
+  late int _stepCount;
 
   /// Creates new object and optionally sets the spark levels
   SparkLine([this._steps = '▁▂▃▄▅▆▇█']) {
